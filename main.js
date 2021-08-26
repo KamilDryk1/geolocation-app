@@ -18,7 +18,7 @@ class App {
       navigator.geolocation.getCurrentPosition(function (position) {
         resolve(position);
         if (!position)
-          throw new Error("Problem with getting position. Try to reload.");
+          reject(new Error("Problem with getting position. Try to reload."));
       });
     })
       .then((position) => this._getCoords(position))
